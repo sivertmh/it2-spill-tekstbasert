@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="NNsSwm2jx2-IXooRKwaj">
+    <mxGraphModel dx="1187" dy="1746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Menneske" vertex="1">
+          <mxGeometry height="170" width="160" x="190" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-2" parent="ScFqf3FLyltE6TQOpuUj-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ liv: int&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ angst: int&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ gull: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-3" parent="ScFqf3FLyltE6TQOpuUj-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-4" parent="ScFqf3FLyltE6TQOpuUj-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ __str__(): get&lt;/div&gt;&lt;div&gt;+ angrep(skade:int): set&lt;/div&gt;" vertex="1">
+          <mxGeometry height="42" width="160" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-5" edge="1" parent="1" source="ScFqf3FLyltE6TQOpuUj-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="ScFqf3FLyltE6TQOpuUj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-6" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Spiller" vertex="1">
+          <mxGeometry height="100" width="160" x="190" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-7" parent="ScFqf3FLyltE6TQOpuUj-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ sekk: liste" vertex="1">
+          <mxGeometry height="26" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-8" parent="ScFqf3FLyltE6TQOpuUj-6" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-9" parent="ScFqf3FLyltE6TQOpuUj-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ status_liv(): get&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-10" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Scene" vertex="1">
+          <mxGeometry height="107" width="160" x="390" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-11" parent="ScFqf3FLyltE6TQOpuUj-10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ tekst: str&lt;/div&gt;&lt;div&gt;+ valg: list&lt;/div&gt;" vertex="1">
+          <mxGeometry height="47" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-12" parent="ScFqf3FLyltE6TQOpuUj-10" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="ScFqf3FLyltE6TQOpuUj-13" parent="ScFqf3FLyltE6TQOpuUj-10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ start_scene(): get" vertex="1">
+          <mxGeometry height="26" width="160" y="81" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
