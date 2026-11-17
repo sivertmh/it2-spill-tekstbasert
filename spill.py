@@ -8,9 +8,7 @@ class Menneske:
      return f"liv er {self._liv}, angst er {self._angst}"
 
    def angrep(self, person, skade:int,): 
-       person._liv -= skade 
-     
-
+       person._liv -= skade
 
 class Spiller(Menneske): 
         def __init__(self, liv:int, angst:int, gull:int, sekk:list, aktivt_vaapen:str):
