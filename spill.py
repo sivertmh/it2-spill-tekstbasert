@@ -51,4 +51,14 @@ class Vaapen:
         print("Skade:", self._skade)
 
 ridder = Spiller(100, 0, 10, ["gammelt sverd"], "gammelt sverd")
+ridder_gammelsverd =Vaapen("gammelt sverd", 20)
 print(ridder)
+print(ridder_gammelsverd)
+
+rover = Menneske(50, 0, "liten kniv" )
+rover_kniv = Vaapen("liten kniv",  10)
+print(rover)
+print(rover_kniv)
+
+gåtemester = Menneske(75, 0, "ingeting")
+print(gåtemester)
