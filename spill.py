@@ -7,15 +7,15 @@ class Menneske:
     angst (int): Menneskets angstpoeng.
     aktivt_vaapen (str): Menneskets aktive våpen.
     """
-   def __init__(self, liv:int, angst:int, aktivt_vaapen):
+    def __init__(self, liv:int, angst:int, aktivt_vaapen):
         self._liv = liv 
         self._angst = angst 
         self._aktivt_vaapen = aktivt_vaapen 
 
-   def __str__(self): 
+    def __str__(self): 
         return f"Liv er {self._liv}, angst er {self._angst} og aktivt våpen er {self._aktivt_vaapen}."
 
-   def angrip(self, person, skade:int,): 
+    def angrip(self, person, skade:int,): 
         person._liv -= skade
 
 class Spiller(Menneske):
@@ -25,10 +25,10 @@ class Spiller(Menneske):
         def __init__(self, liv:int, angst:int, gull:int, sekk:list, aktivt_vaapen):
             super().__init__(liv, angst, aktivt_vaapen)
             self._sekk = sekk
-            self._gull = gull 
+            self._gull = gull
 
         def __str__(self): 
-              return f"Liv er {self._liv}, angst er {self._angst} gull er {self._gull}. Aktivt våpen er {self._aktivt_vaapen}."
+            print(f"Liv er {self._liv}, angst er {self._angst} gull er {self._gull}.")
 
         def oppdater_gull(self, gull):
             self._gull += gull
@@ -103,25 +103,6 @@ class Vaapen:
     def __str__(self):
         print(f"Våpen: {self._navn}, skade: {self._skade}")
 
-# Våpen-objekter
-gammelt_sverd = Vaapen("gammelt sverd", 20)
-liten_kniv = Vaapen("liten kniv", 10)
-
-# Menneske-objekter og spiller-objekt
-ridder = Spiller(100, 0, 10, [gammelt_sverd], gammelt_sverd)
-rover = Menneske(50, 0, liten_kniv)
-gaatemester = Menneske(75, 0, "ingeting")
-
-print(ridder)
-print(gammelt_sverd)
-
-print(rover)
-print(liten_kniv)
-
-print(gaatemester)
-
-ridder = Spiller(100, 0, 10, ["gammelt sverd"], "gammelt sverd")
-
 # Et scene-objekt består av en scenebeskrivelse først, så kommer en liste med en eller flere todimensjonale ordbøker som inneholder spillerens valgmuligheter.
 scene1 = Scene(
     "Du går langs den knasende grusveien og går rundt det høye fjellets hjørne. Å nei! Rundt hjørnet og inn i en fjellsprekk ser du en kræsjet vogn, det skinner av gull og du hører en kvinne rope etter hjelp.",
@@ -194,6 +175,17 @@ scene3 = Scene(
         }
     ]
 )
+
+# Våpen-objekter
+gammelt_sverd = Vaapen("gammelt sverd", 20)
+liten_kniv = Vaapen("liten kniv", 10)
+
+# Menneske-objekter og spiller-objekt
+ridder = Spiller(100, 0, 10, [gammelt_sverd], gammelt_sverd)
+rover = Menneske(50, 0, liten_kniv)
+gaatemester = Menneske(75, 0, "ingeting")
+
+ridder = Spiller(100, 0, 10, ["gammelt sverd"], "gammelt sverd")
 
 scene1.start_scene()
 scene2.start_scene()
