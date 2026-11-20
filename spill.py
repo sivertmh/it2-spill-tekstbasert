@@ -26,20 +26,43 @@ class Spiller(Menneske):
          self._aktivt_vaapen = vaapen 
 
 class Scene:
+    """
+    Klasse for å lage scene-objekter.
+    
+    Parametre:
+        tekst (str): Scenebeskrivelse
+        valg (list): En liste så mange todimensjonelle ordbøker som det er 
+    """
     def __init__(self, tekst:str, valg:list):
+        """Konstruktør"""
         self._tekst = tekst
         self._valg = valg
     
     def start_scene(self):
+        """Metode som viser spilleren beskrivelsen for denne scenen."""
         print(self._tekst)
         
+        # For-løkke som vil vise spilleren valgene for scenen.
         n = 1
-        
         for valg in self._valg:
-            print(f"Valg {n}: {valg}")
+            print("\n" + f"Valg {n}: {valg["tekst"]}")
             n += 1
+        
+        # Spiller må velge tall som tilsvarer ett av valgene til scenen. 
+        # Tar valgt minus 1 for å få en fungerende indeks.
+        valgt = int(input("\n" + f"Hva gjør du? (tall fra 1-{(n-1)}): ")) - 1
+        
+        # Utfallet tilhørende spillerens valg.
+        utfall = self._valg[valgt]["utfall"]
+        
+        if valgt:
+            # Skriver ut tekstresultat for utfallet.
+            print(utfall["tekst"] + "\n")
             
-        valgt = input(f"Hva gjør du? (tall fra 1-{(n-1)}): ")
+            # Om gull finnes i den todimensjonelle ordboken som spiller valgte.
+            if utfall["gull"]:
+                # Oppdaterer ridderens (spillerens) gull med utfall fra scene som parameter.
+                ridder.oppdater_gull(utfall["gull"])
 
 class Vaapen:
     def __init__(self, navn:str, skade:int):
@@ -51,4 +74,66 @@ class Vaapen:
         print("Skade:", self._skade)
 
 ridder = Spiller(100, 0, 10, ["gammelt sverd"], "gammelt sverd")
+
+scene1 = Scene(
+    "Du går langs den knasende grusveien og går rundt det høye fjellets hjørne. Å nei! Rundt hjørnet og inn i en fjellsprekk ser du en kræsjet vogn, det skinner av gull og du hører en kvinne rope etter hjelp.",
+    [
+        {
+        "tekst": "Redd kvinnen som sitter fast i vognen.", 
+        "utfall": {
+            "tekst": "Du hjelper kvinnen ut fra vognens vrak. Hun er veldig takknemlig for at du reddet henne og kommer til å huske det for alltid. Hun gir deg snap'en sin og 250 gull.", 
+            "gull":250,
+            }
+        },
+        {
+        "tekst": "Ta gullet som ligger der, lett tilgjengelig (1000).", 
+        "utfall": {
+            "tekst": "Du tar plukker opp gull rundt omkring med lyden av en skrikende kvinne som ser på deg, hun kommer til å huske fjeset ditt. Du blir ferdig med plukkingen og har nå 1000 gull.",
+            "gull": 1000,
+            }
+        }
+    ]
+)
+
+scene2 = Scene(
+    "Du går til bygda for å fullføre ditt oppdrag du fikk fra den allmektige kongen i bygda møter du en røver han kommer bort til deg med en kniv og sier 'gi meg 200 gull!'.",
+    [
+        {
+        "tekst": "Overgi gullet ditt.", 
+        "utfall": {
+            "tekst": "Du mistet 200 gull og røveren stakk avgårde (-200 gull).",
+            "gull": -200
+            }
+        },
+        {
+        "tekst": "Slåss mot røveren med ditt gamle sverd.", 
+        "utfall": {
+            "tekst": "Du mistet 25 liv, men du klarte å drepe ham (-25 liv).",
+            "liv": -25
+            }
+        }
+    ]
+)
+
+scene3 = Scene(
+    "Du har hentet alt du trenger fra bygda og er på vei ut, ved porten står en gåtemester. Han sier før du kan gå ut må du svare på mine gåter. Hva blir våtere jo mer den tørker?",
+    [
+        {
+           "tekst": "Håndkle.",
+           "utfall": {
+               "tekst": "Du svarte riktig. Derfor ble du glad og fikk slippe ut gjennom porten."
+           },
+           "tekst": "Vann.",
+           "utfall": {
+               "tekst": "Du svarte feil og ble flau. Derfor fikk du mer angst (+20 angst).",
+               "angst": 20
+           }
+        }
+    ]
+)
+
+scene1.start_scene()
+scene2.start_scene()
+scene3.start_scene()
+
 print(ridder)
