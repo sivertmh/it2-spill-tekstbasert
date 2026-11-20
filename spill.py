@@ -1,29 +1,46 @@
 class Menneske: 
-   def __init__(self, liv:int, angst:int, aktivt_vaapen:str):
-      self._liv = liv 
-      self._angst = angst 
-      self._aktivt_vaapen = aktivt_vaapen 
+    """
+    Klasse for å lage menneske-objekt.
+    
+    Parametere:
+    liv (int): Menneskets livspoeng.
+    angst (int): Menneskets angstpoeng.
+    aktivt_vaapen (str): Menneskets aktive våpen.
+    """
+   def __init__(self, liv:int, angst:int, aktivt_vaapen):
+        self._liv = liv 
+        self._angst = angst 
+        self._aktivt_vaapen = aktivt_vaapen 
 
    def __str__(self): 
-     return f"liv er {self._liv}, angst er {self._angst}"
+        return f"Liv er {self._liv}, angst er {self._angst} og aktivt våpen er {self._aktivt_vaapen}."
 
-   def angrep(self, person, skade:int,): 
-       person._liv -= skade
+   def angrip(self, person, skade:int,): 
+        person._liv -= skade
 
 class Spiller(Menneske): 
-        def __init__(self, liv:int, angst:int, gull:int, sekk:list, aktivt_vaapen:str):
-         super().__init__(liv, angst, aktivt_vaapen)
-         self._sekk = sekk
-         self._gull = gull 
+        """
+        Klasse for å lage spiller-objekt.
+        """
+        def __init__(self, liv:int, angst:int, gull:int, sekk:list, aktivt_vaapen):
+            super().__init__(liv, angst, aktivt_vaapen)
+            self._sekk = sekk
+            self._gull = gull 
          
         def __str__(self): 
-              return f"liv er {self._liv}, angst er {self._angst} gull er {self._gull}"
+              return f"Liv er {self._liv}, angst er {self._angst} gull er {self._gull}. Aktivt våpen er {self._aktivt_vaapen}."
 
         def oppdater_gull(self, gull):
-            self._gull += gull 
+            self._gull += gull
+            
+        def oppdater_liv(self, liv):
+            self._liv += liv
+
+        def oppdater_angst(self, angst):
+            self._angst += angst
 
         def bytt_vaapen(self, vaapen):
-         self._aktivt_vaapen = vaapen 
+            self._aktivt_vaapen = vaapen 
 
 class Scene:
     def __init__(self, tekst:str, valg:list):
@@ -42,23 +59,29 @@ class Scene:
         valgt = input(f"Hva gjør du? (tall fra 1-{(n-1)}): ")
 
 class Vaapen:
+    """
+    Klasse for å lage våpen-objekt
+    """
     def __init__(self, navn:str, skade:int):
         self._navn = navn
         self._skade = skade
     
     def __str__(self):
-        print("Våpen:", self._navn)
-        print("Skade:", self._skade)
+        print(f"Våpen: {self._navn}, skade: {self._skade}")
 
-ridder = Spiller(100, 0, 10, ["gammelt sverd"], "gammelt sverd")
-ridder_gammelsverd =Vaapen("gammelt sverd", 20)
+# Våpen-objekter
+gammelt_sverd = Vaapen("gammelt sverd", 20)
+liten_kniv = Vaapen("liten kniv", 10)
+
+# Menneske-objekter og spiller-objekt
+ridder = Spiller(100, 0, 10, [gammelt_sverd], gammelt_sverd)
+rover = Menneske(50, 0, liten_kniv)
+gaatemester = Menneske(75, 0, "ingeting")
+
 print(ridder)
-print(ridder_gammelsverd)
+print(gammelt_sverd)
 
-rover = Menneske(50, 0, "liten kniv" )
-rover_kniv = Vaapen("liten kniv",  10)
 print(rover)
-print(rover_kniv)
+print(liten_kniv)
 
-gåtemester = Menneske(75, 0, "ingeting")
-print(gåtemester)
+print(gaatemester)
